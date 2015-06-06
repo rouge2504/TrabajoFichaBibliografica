@@ -43,24 +43,25 @@ namespace JazzProject
 
             for (int i = 0; i < indices.Count; i++)
             {
-                AddNewLabel(indices[i], i);
+                AddNewLabelTodosLosCampos(indices[i], i);
                 //System.Diagnostics.Debug.WriteLine(AddNewLabel(indices[i], i).Text);
             }
             }
        
-        public LinkLabel AddNewLabel(int indice, int posicion)
+        private LinkLabel AddNewLabelTodosLosCampos(int indice, int posicion)
         {
 
             LinkLabel txt = new LinkLabel();
             this.Controls.Add(txt);
-            txt.LinkClicked += new LinkLabelLinkClickedEventHandler(this.ventanaEmergente); //poner lo que se mandara osea un void 
-            txt.Top = posicion * 28;
-            txt.Left = 15;
-            txt.Text = "hola" + posicion;
+            txt.LinkClicked += new LinkLabelLinkClickedEventHandler(this.clickTodosLosCampos); //poner lo que se mandara osea un void 
+            txt.Top = posicion * 30;
+            txt.Left = 15;      
+            txt.Text = manageData.extraccionDatosTodosLosCampos(indice);
+            txt.AutoSize = true;
             return txt;
         }
 
-        private void ventanaEmergente(object sender, LinkLabelLinkClickedEventArgs e)  //hacer links dinamicos tambien!!!
+        private void clickTodosLosCampos(object sender, LinkLabelLinkClickedEventArgs e)  //hacer links dinamicos tambien!!!
         {
             // Determine which link was clicked within the LinkLabel.
             //System.Diagnostics.Debug.WriteLine(txt.Text);
@@ -69,8 +70,8 @@ namespace JazzProject
             for (int i = 0; i < indices.Count; i++)
             {
 
-                if (checkSender == AddNewLabel(indices[i], i).Text)
-                    System.Diagnostics.Debug.WriteLine(AddNewLabel(indices[i], i).Text);
+                if (checkSender == AddNewLabelTodosLosCampos(indices[i], i).Text)
+                    System.Diagnostics.Debug.WriteLine(AddNewLabelTodosLosCampos(indices[i], i).Text);
             }
 
             

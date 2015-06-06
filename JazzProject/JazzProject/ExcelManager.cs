@@ -309,5 +309,25 @@ namespace JazzProject
 
             return listaTema;  //hay que limpiar esta lista de repetidos
         }
+
+        public string extraccionDatosTodosLosCampos(int indice)
+        {
+            DataTable dt = extraccionDatos();
+            string autor = dt.Rows[indice][6].ToString() + dt.Rows[indice][7].ToString() + dt.Rows[indice][8].ToString();
+            string titulo = dt.Rows[indice][3].ToString();
+            string subtitulo = dt.Rows[indice][4].ToString();
+           // string subtitulo = dt.Rows[indice][5].ToString();
+            if (string.IsNullOrEmpty(subtitulo))
+            {
+                subtitulo = "";
+            }
+
+            if (string.IsNullOrEmpty(autor))
+            {
+                autor = "sin autor";
+            }
+            string resultado = autor + "; " + titulo + "; " + subtitulo;
+            return resultado;
+        }
     }
 }
