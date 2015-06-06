@@ -1,0 +1,11 @@
+c:\users\rogelio\documents\visual studio 2013\Projects\JazzProject\JazzProject\bin\Debug\JazzProject.exe.config
+c:\users\rogelio\documents\visual studio 2013\Projects\JazzProject\JazzProject\bin\Debug\JazzProject.exe
+c:\users\rogelio\documents\visual studio 2013\Projects\JazzProject\JazzProject\bin\Debug\JazzProject.pdb
+c:\users\rogelio\documents\visual studio 2013\Projects\JazzProject\JazzProject\obj\Debug\JazzProject.csprojResolveAssemblyReference.cache
+c:\users\rogelio\documents\visual studio 2013\Projects\JazzProject\JazzProject\obj\Debug\JazzProject.Properties.Resources.resources
+c:\users\rogelio\documents\visual studio 2013\Projects\JazzProject\JazzProject\obj\Debug\JazzProject.csproj.GenerateResource.Cache
+c:\users\rogelio\documents\visual studio 2013\Projects\JazzProject\JazzProject\obj\Debug\JazzProject.exe
+c:\users\rogelio\documents\visual studio 2013\Projects\JazzProject\JazzProject\obj\Debug\JazzProject.pdb
+C:\Users\Rogelio\Documents\Visual Studio 2013\Projects\JazzProject\JazzProject\obj\Debug\JazzProject.csproj.ResolveComReference.cache
+C:\Users\Rogelio\Documents\Visual Studio 2013\Projects\JazzProject\JazzProject\obj\Debug\JazzProject.ResultadoDeBusqueda.resources
+C:\Users\Rogelio\Documents\Visual Studio 2013\Projects\JazzProject\JazzProject\obj\Debug\JazzProject.Index.resources
