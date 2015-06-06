@@ -9,3 +9,14 @@ c:\users\rogelio\documents\visual studio 2013\Projects\JazzProject\JazzProject\o
 C:\Users\Rogelio\Documents\Visual Studio 2013\Projects\JazzProject\JazzProject\obj\Debug\JazzProject.csproj.ResolveComReference.cache
 C:\Users\Rogelio\Documents\Visual Studio 2013\Projects\JazzProject\JazzProject\obj\Debug\JazzProject.ResultadoDeBusqueda.resources
 C:\Users\Rogelio\Documents\Visual Studio 2013\Projects\JazzProject\JazzProject\obj\Debug\JazzProject.Index.resources
+C:\Users\Rogelio\SkyDrive\Documents\JazzProject\JazzProject\bin\Debug\JazzProject.exe.config
+C:\Users\Rogelio\SkyDrive\Documents\JazzProject\JazzProject\obj\Debug\JazzProject.csproj.ResolveComReference.cache
+C:\Users\Rogelio\SkyDrive\Documents\JazzProject\JazzProject\obj\Debug\JazzProject.exe
+C:\Users\Rogelio\SkyDrive\Documents\JazzProject\JazzProject\obj\Debug\JazzProject.pdb
+C:\Users\Rogelio\SkyDrive\Documents\JazzProject\JazzProject\obj\Debug\JazzProject.csprojResolveAssemblyReference.cache
+C:\Users\Rogelio\SkyDrive\Documents\JazzProject\JazzProject\obj\Debug\JazzProject.Index.resources
+C:\Users\Rogelio\SkyDrive\Documents\JazzProject\JazzProject\obj\Debug\JazzProject.Properties.Resources.resources
+C:\Users\Rogelio\SkyDrive\Documents\JazzProject\JazzProject\obj\Debug\JazzProject.ResultadoDeBusqueda.resources
+C:\Users\Rogelio\SkyDrive\Documents\JazzProject\JazzProject\obj\Debug\JazzProject.csproj.GenerateResource.Cache
+C:\Users\Rogelio\SkyDrive\Documents\JazzProject\JazzProject\bin\Debug\JazzProject.exe
+C:\Users\Rogelio\SkyDrive\Documents\JazzProject\JazzProject\bin\Debug\JazzProject.pdb

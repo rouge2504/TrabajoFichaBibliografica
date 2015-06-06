@@ -15,6 +15,7 @@ namespace JazzProject
     public partial class ResultadoDeBusqueda : Form
     {
         ExcelManager manageData = new ExcelManager();
+        
         public ResultadoDeBusqueda()
         {
             InitializeComponent();
@@ -43,9 +44,10 @@ namespace JazzProject
             for (int i = 0; i < indices.Count; i++)
             {
                 AddNewLabel(indices[i], i);
-
+                //System.Diagnostics.Debug.WriteLine(AddNewLabel(indices[i], i).Text);
             }
             }
+       
         public LinkLabel AddNewLabel(int indice, int posicion)
         {
 
@@ -61,8 +63,17 @@ namespace JazzProject
         private void ventanaEmergente(object sender, LinkLabelLinkClickedEventArgs e)  //hacer links dinamicos tambien!!!
         {
             // Determine which link was clicked within the LinkLabel.
-            System.Diagnostics.Debug.WriteLine(txt.Text);
+            //System.Diagnostics.Debug.WriteLine(txt.Text);
 
+            string checkSender = ((LinkLabel)sender).Text.ToString();
+            for (int i = 0; i < indices.Count; i++)
+            {
+
+                if (checkSender == AddNewLabel(indices[i], i).Text)
+                    System.Diagnostics.Debug.WriteLine(AddNewLabel(indices[i], i).Text);
+            }
+
+            
         }
 
         private List<int> Autor(string autor)
