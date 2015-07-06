@@ -26,7 +26,8 @@ namespace JazzProject
                 OpenFileDialog openfile1 = new OpenFileDialog();
                 openfile1.Filter = "Excel Files |*.xlsx";
                 openfile1.Title = "BASE DE DATOS ejemplo";
-                ruta = "C:\\Users\\Rogelio\\Downloads\\BASE DE DATOS ejemplo";
+               // ruta = "C:\\Users\\Rogelio\\Downloads\\BASE DE DATOS ejemplo";
+                ruta = System.IO.Directory.GetCurrentDirectory();
                 //if (openfile1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 //{
                 //    if (openfile1.FileName.Equals("") == false)
@@ -60,7 +61,9 @@ namespace JazzProject
                 OpenFileDialog openfile1 = new OpenFileDialog();
                 openfile1.Filter = "Excel Files |*.xlsx";
                 openfile1.Title = "BASE DE DATOS ejemplo";
-                ruta = "C:\\Users\\Rogelio\\Downloads\\BASE DE DATOS ejemplo";
+                ruta = "C:\\Users\\Rogelio\\Downloads\\BASE DE DATOS ejemplo uno";
+                ruta = System.IO.Directory.GetCurrentDirectory();
+                string name = "\\BASE DE DATOS ejemplo";
                 //if (openfile1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 //{
                 //    if (openfile1.FileName.Equals("") == false)
@@ -68,7 +71,7 @@ namespace JazzProject
                 //        ruta = openfile1.FileName;
                 //    }
                 //}
-                comn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;data source=" + ruta + ";Extended Properties='Excel 12.0 Xml;HDR=Yes'");
+                comn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;data source=" + ruta + name +";Extended Properties='Excel 12.0 Xml;HDR=Yes'");
                 MyDataAdapter = new OleDbDataAdapter("Select * from [Hoja1$]", comn);
                 dt = new DataTable();
                 MyDataAdapter.Fill(dt);
@@ -327,6 +330,33 @@ namespace JazzProject
                 autor = "sin autor";
             }
             string resultado = autor + "; " + titulo + "; " + subtitulo;
+            return resultado;
+        }
+
+        public string extraccionDatosAutor(int indice)
+        {
+            DataTable dt = extraccionDatos();
+            string autor = dt.Rows[indice][6].ToString() + " " + dt.Rows[indice][7].ToString() + " " + dt.Rows[indice][8].ToString()
+                + " " + "\n" + dt.Rows[indice][9].ToString() + " " + dt.Rows[indice][10].ToString() + " " + dt.Rows[indice][11].ToString()
+                 + " " + "\n" + dt.Rows[indice][12].ToString() + " " + dt.Rows[indice][13].ToString()
+                  + " " + "\n" + dt.Rows[indice][14].ToString()
+                  + " "+"\n" + dt.Rows[indice][15].ToString();
+
+            if (string.IsNullOrEmpty(autor))
+            {
+                autor = "sin autor";
+            }
+            string resultado = autor;
+            return resultado;
+        }
+
+        public string extraccionDatosTitulo(int indice)
+        {
+            DataTable dt = extraccionDatos();
+            string titulo = dt.Rows[indice][3].ToString();
+            // string subtitulo = dt.Rows[indice][5].ToString();
+ 
+            string resultado = titulo;
             return resultado;
         }
     }

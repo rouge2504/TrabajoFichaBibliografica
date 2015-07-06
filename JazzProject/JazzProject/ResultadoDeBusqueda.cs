@@ -43,8 +43,9 @@ namespace JazzProject
 
             for (int i = 0; i < indices.Count; i++)
             {
-                AddNewLabelTodosLosCampos(indices[i], i);
+               // AddNewLabelTodosLosCampos(indices[i], i);
                 //System.Diagnostics.Debug.WriteLine(AddNewLabel(indices[i], i).Text);
+                AddNewLabelTabla(indices[i]);
             }
             }
        
@@ -57,6 +58,28 @@ namespace JazzProject
             txt.Top = posicion * 30;
             txt.Left = 15;      
             txt.Text = manageData.extraccionDatosTodosLosCampos(indice);
+            txt.AutoSize = true;
+            return txt;
+        }
+
+        private LinkLabel AddNewLabelTabla(int indice)
+        {
+
+            LinkLabel txt = new LinkLabel();
+            this.Controls.Add(txt);
+            txt.LinkClicked += new LinkLabelLinkClickedEventHandler(this.clickTodosLosCampos); //poner lo que se mandara osea un void 
+            txt.Left = 15;
+            //txt.Text = manageData.extraccionDatosTodosLosCampos(indice);
+            dataGridView1.Rows.Add(manageData.extraccionDatosTitulo(indice), manageData.extraccionDatosAutor(indice));
+            //dataGridView1.AutoResizeColumns();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridView1.Columns["nombreTitulo"].SortMode = DataGridViewColumnSortMode.NotSortable;
+            dataGridView1.Columns["nombre"].SortMode = DataGridViewColumnSortMode.NotSortable;
+            dataGridView1.Columns["nombreTitulo"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            dataGridView1.Columns["nombre"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            dataGridView1.Columns["nombreTitulo"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns["nombre"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             txt.AutoSize = true;
             return txt;
         }
@@ -207,6 +230,16 @@ namespace JazzProject
             }
             return busquedaDeLugar;
 
+        }
+
+        private void vaciadoTabla()
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine(e.RowIndex);
         }
 
 

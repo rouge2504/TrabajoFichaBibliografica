@@ -20,3 +20,14 @@ C:\Users\Rogelio\SkyDrive\Documents\JazzProject\JazzProject\obj\Debug\JazzProjec
 C:\Users\Rogelio\SkyDrive\Documents\JazzProject\JazzProject\obj\Debug\JazzProject.csproj.GenerateResource.Cache
 C:\Users\Rogelio\SkyDrive\Documents\JazzProject\JazzProject\bin\Debug\JazzProject.exe
 C:\Users\Rogelio\SkyDrive\Documents\JazzProject\JazzProject\bin\Debug\JazzProject.pdb
+C:\Users\Rogelio Trejo\Documents\TrabajoFichaBibliografica\JazzProject\JazzProject\bin\Debug\JazzProject.exe.config
+C:\Users\Rogelio Trejo\Documents\TrabajoFichaBibliografica\JazzProject\JazzProject\obj\Debug\JazzProject.csproj.ResolveComReference.cache
+C:\Users\Rogelio Trejo\Documents\TrabajoFichaBibliografica\JazzProject\JazzProject\bin\Debug\JazzProject.exe
+C:\Users\Rogelio Trejo\Documents\TrabajoFichaBibliografica\JazzProject\JazzProject\bin\Debug\JazzProject.pdb
+C:\Users\Rogelio Trejo\Documents\TrabajoFichaBibliografica\JazzProject\JazzProject\obj\Debug\JazzProject.csprojResolveAssemblyReference.cache
+C:\Users\Rogelio Trejo\Documents\TrabajoFichaBibliografica\JazzProject\JazzProject\obj\Debug\JazzProject.Index.resources
+C:\Users\Rogelio Trejo\Documents\TrabajoFichaBibliografica\JazzProject\JazzProject\obj\Debug\JazzProject.Properties.Resources.resources
+C:\Users\Rogelio Trejo\Documents\TrabajoFichaBibliografica\JazzProject\JazzProject\obj\Debug\JazzProject.ResultadoDeBusqueda.resources
+C:\Users\Rogelio Trejo\Documents\TrabajoFichaBibliografica\JazzProject\JazzProject\obj\Debug\JazzProject.csproj.GenerateResource.Cache
+C:\Users\Rogelio Trejo\Documents\TrabajoFichaBibliografica\JazzProject\JazzProject\obj\Debug\JazzProject.exe
+C:\Users\Rogelio Trejo\Documents\TrabajoFichaBibliografica\JazzProject\JazzProject\obj\Debug\JazzProject.pdb
