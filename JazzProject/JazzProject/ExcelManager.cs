@@ -313,6 +313,24 @@ namespace JazzProject
             return listaTema;  //hay que limpiar esta lista de repetidos
         }
 
+        public List<int> Clave(string chequeDeClave)
+        {
+            List<int> listaClave = new List<int>();
+            for (int i = 0; i < Autor(chequeDeClave).Count; i++)
+            {
+                listaClave.Add(Autor(chequeDeClave)[i]);
+            }
+            for (int i = 0; i < Titulo(chequeDeClave).Count; i++)
+            {
+                listaClave.Add(Titulo(chequeDeClave)[i]);
+            }
+            for (int i = 0; i < Tema(chequeDeClave).Count; i++)
+            {
+                listaClave.Add(Tema(chequeDeClave)[i]);
+            }
+                return listaClave;
+        }
+
         public string extraccionDatosTodosLosCampos(int indice)
         {
             DataTable dt = extraccionDatos();
@@ -333,19 +351,63 @@ namespace JazzProject
             return resultado;
         }
 
-        public string extraccionDatosAutor(int indice)
+        public string extraccionDatosParaTabla(int indice)
         {
             DataTable dt = extraccionDatos();
-            string autor = dt.Rows[indice][6].ToString() + " " + dt.Rows[indice][7].ToString() + " " + dt.Rows[indice][8].ToString()
-                + " " + "\n" + dt.Rows[indice][9].ToString() + " " + dt.Rows[indice][10].ToString() + " " + dt.Rows[indice][11].ToString()
-                 + " " + "\n" + dt.Rows[indice][12].ToString() + " " + dt.Rows[indice][13].ToString()
-                  + " " + "\n" + dt.Rows[indice][14].ToString()
-                  + " "+"\n" + dt.Rows[indice][15].ToString();
+            string autor = dt.Rows[indice][6].ToString() + dt.Rows[indice][7].ToString() + dt.Rows[indice][8].ToString();
+            string titulo = dt.Rows[indice][3].ToString();
+            string subtitulo = dt.Rows[indice][4].ToString();
+            // string subtitulo = dt.Rows[indice][5].ToString();
+            if (string.IsNullOrEmpty(subtitulo))
+            {
+                subtitulo = "";
+            }
 
             if (string.IsNullOrEmpty(autor))
             {
                 autor = "sin autor";
             }
+            string resultado = autor + "; " + titulo + "; " + subtitulo;
+            return resultado;
+
+        }
+
+        public string extraccionDatosAutor(int indice)
+        {
+            DataTable dt = extraccionDatos();
+            string autor = dt.Rows[indice][6].ToString() + " " + dt.Rows[indice][7].ToString() + " " + dt.Rows[indice][8].ToString();
+                //+ " " + "\n" + dt.Rows[indice][9].ToString() + " " + dt.Rows[indice][10].ToString() + " " + dt.Rows[indice][11].ToString()
+                // + " " + "\n" + dt.Rows[indice][12].ToString() + " " + dt.Rows[indice][13].ToString()
+                //  + " " + "\n" + dt.Rows[indice][14].ToString()
+                //  + " "+"\n" + dt.Rows[indice][15].ToString();
+
+            
+
+            if (!string.IsNullOrEmpty(dt.Rows[indice][9].ToString()))
+            {
+                autor = autor + " " + "\n" + dt.Rows[indice][9].ToString() + " " + dt.Rows[indice][10].ToString() + " " + dt.Rows[indice][11].ToString();
+            }
+
+            if (!string.IsNullOrEmpty(dt.Rows[indice][12].ToString()))
+            {
+                autor = autor + " " + "\n" + dt.Rows[indice][12].ToString() + " " + dt.Rows[indice][13].ToString();
+            }
+
+            if (!string.IsNullOrEmpty(dt.Rows[indice][14].ToString()))
+            {
+                autor = autor + " " + "\n" + dt.Rows[indice][14].ToString();
+            }
+
+            if (!string.IsNullOrEmpty(dt.Rows[indice][15].ToString()))
+            {
+                autor = autor + " " + "\n" + dt.Rows[indice][15].ToString();
+            }
+
+            if (string.IsNullOrEmpty(autor))
+            {
+                autor = "sin autor";
+            }
+
             string resultado = autor;
             return resultado;
         }

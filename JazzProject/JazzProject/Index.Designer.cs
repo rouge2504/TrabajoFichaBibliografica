@@ -41,6 +41,7 @@
             this.textBoxTitulo = new System.Windows.Forms.TextBox();
             this.textBoxAutor = new System.Windows.Forms.TextBox();
             this.buttonBuscarLibro = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BuscarInicio
@@ -167,11 +168,23 @@
             this.buttonBuscarLibro.Visible = false;
             this.buttonBuscarLibro.Click += new System.EventHandler(this.buttonBuscarLibro_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(543, 69);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Procesando";
+            this.label1.Visible = false;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(701, 304);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonBuscarLibro);
             this.Controls.Add(this.labelBienvenida);
             this.Controls.Add(this.BuscarInicio);
@@ -208,6 +221,7 @@
         private System.Windows.Forms.TextBox textBoxTitulo;
         private System.Windows.Forms.TextBox textBoxAutor;
         private System.Windows.Forms.Button buttonBuscarLibro;
+        public System.Windows.Forms.Label label1;
     }
 }
 

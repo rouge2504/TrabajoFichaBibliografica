@@ -15,7 +15,7 @@ namespace JazzProject
     public partial class ResultadoDeBusqueda : Form
     {
         ExcelManager manageData = new ExcelManager();
-        
+        Index pantallaInicio = new Index();
         public ResultadoDeBusqueda()
         {
             InitializeComponent();
@@ -40,7 +40,7 @@ namespace JazzProject
 
 
             indices = indices.Distinct().ToList();
-
+            pantallaInicio.label1.Visible = false;
             for (int i = 0; i < indices.Count; i++)
             {
                // AddNewLabelTodosLosCampos(indices[i], i);
@@ -48,6 +48,108 @@ namespace JazzProject
                 AddNewLabelTabla(indices[i]);
             }
             }
+
+        public void listaResultados(string autor, string titulo, string tema)
+        {
+            //enfocado sin clave
+            indices = new List<int>();
+            for (int i = 0; i < Autor(autor).Count; i++)
+            {
+                indices.Add(Autor(autor)[i]);
+            }
+            for (int i = 0; i < Titulo(titulo).Count; i++)
+            {
+                indices.Add(Titulo(titulo)[i]);
+            }
+            for (int i = 0; i < Tema(tema).Count; i++)
+            {
+                indices.Add(Tema(tema)[i]);
+            }
+
+
+            indices = indices.Distinct().ToList();
+            pantallaInicio.label1.Visible = false;
+            for (int i = 0; i < indices.Count; i++)
+            {
+                // AddNewLabelTodosLosCampos(indices[i], i);
+                //System.Diagnostics.Debug.WriteLine(AddNewLabel(indices[i], i).Text);
+                AddNewLabelTabla(indices[i]);
+            }
+        }
+
+        public void listaResultadosAutor(string autor)
+        {
+            //enfocado puro autor
+            indices = new List<int>();
+            for (int i = 0; i < Autor(autor).Count; i++)
+            {
+                indices.Add(Autor(autor)[i]);
+            }
+            indices = indices.Distinct().ToList();
+            pantallaInicio.label1.Visible = false;
+            for (int i = 0; i < indices.Count; i++)
+            {
+
+                AddNewLabelTabla(indices[i]);
+            }
+        }
+
+        public void listaResultadosTitulo(string titulo)
+        {
+            //enfocado puro titulo
+            indices = new List<int>();
+
+            for (int i = 0; i < Titulo(titulo).Count; i++)
+            {
+                indices.Add(Titulo(titulo)[i]);
+            }
+          
+
+
+            indices = indices.Distinct().ToList();
+            pantallaInicio.label1.Visible = false;
+            for (int i = 0; i < indices.Count; i++)
+            {
+
+                AddNewLabelTabla(indices[i]);
+            }
+        }
+
+        public void listaResultadosTema(string tema)
+        {
+            //enfocado puro titulo
+            indices = new List<int>();
+
+            for (int i = 0; i < Tema(tema).Count; i++)
+            {
+                indices.Add(Tema(tema)[i]);
+            }
+            indices = indices.Distinct().ToList();
+            pantallaInicio.label1.Visible = false;
+            for (int i = 0; i < indices.Count; i++)
+            {
+
+                AddNewLabelTabla(indices[i]);
+            }
+        }
+
+        public void listaResultadosClave(string clave)
+        {
+            //enfocado puro clave
+            indices = new List<int>();
+
+            for (int i = 0; i < Clave(clave).Count; i++)
+            {
+                indices.Add(Clave(clave)[i]);
+            }
+            indices = indices.Distinct().ToList();
+            pantallaInicio.label1.Visible = false;
+            for (int i = 0; i < indices.Count; i++)
+            {
+
+                AddNewLabelTabla(indices[i]);
+            }
+        }
        
         private LinkLabel AddNewLabelTodosLosCampos(int indice, int posicion)
         {
@@ -226,20 +328,68 @@ namespace JazzProject
 
             for (int i = 0; i < listadoDeNombre.Count; i++)
             {
-                busquedaDeLugar = manageData.Titulo(listadoDeNombre[i]).Distinct().ToList();
+                busquedaDeLugar = manageData.Tema(listadoDeNombre[i]).Distinct().ToList();
             }
             return busquedaDeLugar;
 
         }
 
-        private void vaciadoTabla()
+        private List<int> Clave(string clave)
         {
+            //clave
+            string claveParaChecar = clave;
+            claveParaChecar += " algo";
+            string space = " ";
+            List<string> listadoDeNombre = new List<string>();
+            List<int> busquedaDeLugar = new List<int>();
+            int it_separador = 0;
+            string[] pronombres = new string[] { "DE", "LOS", "LAS", "LA", "EL" };
+            for (int i = 0; i < claveParaChecar.Length; i++)
+            {
+                if (claveParaChecar[i] == space[0])
+                {
+                    string nombreTemp = "";
+                    for (int j = it_separador; j < i; j++)
+                    {
+
+                        nombreTemp += claveParaChecar[j];
+                    }
+                    nombreTemp = nombreTemp.ToUpper();
+
+                    listadoDeNombre.Add(nombreTemp);
+                    for (int j = 0; j < pronombres.Length; j++)
+                    {
+                        if (nombreTemp == pronombres[j])
+                        {
+
+                            listadoDeNombre.Remove(nombreTemp);
+                        }
+                    }
+                    it_separador = i + 1;
+                }
+            }
+
+
+            for (int i = 0; i < listadoDeNombre.Count; i++)
+            {
+                busquedaDeLugar = manageData.Clave(listadoDeNombre[i]).Distinct().ToList();
+            }
+            return busquedaDeLugar;
 
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             System.Diagnostics.Debug.WriteLine(e.RowIndex);
+            
+            tablaResultado(indices[e.RowIndex]);
+        }
+
+        private void tablaResultado(int indice)
+        {
+            dataGridView1.Visible = false;
+            richTextBox1.Visible = true;
+            richTextBox1.Text = manageData.extraccionDatosParaTabla(indice);
         }
 
 

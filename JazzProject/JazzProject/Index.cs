@@ -75,26 +75,69 @@ namespace JazzProject
 
         private void buttonBuscarLibro_Click(object sender, EventArgs e)
         {
+            
             nombre = textBoxAutor.Text;
             titulo = textBoxTitulo.Text;
             tema = textBoxTema.Text;
             clave = textBoxPalabraClave.Text;
+            
             if (string.IsNullOrEmpty(nombre) && string.IsNullOrEmpty(titulo) && string.IsNullOrEmpty(tema) && string.IsNullOrEmpty(clave))
             {
                 MessageBox.Show("Por favor llena los campos");
                 
             }
-            else if (string.IsNullOrEmpty(nombre) && string.IsNullOrEmpty(titulo))
+            else if (string.IsNullOrEmpty(nombre) && string.IsNullOrEmpty(titulo) && string.IsNullOrEmpty(tema) && string.IsNullOrEmpty(clave))
             {
                 MessageBox.Show("Es necesario tener por lo menos el autor o el titulo");
             }
-            else if (!string.IsNullOrEmpty(nombre) || !string.IsNullOrEmpty(titulo) || !string.IsNullOrEmpty(tema) || !string.IsNullOrEmpty(clave))
+            else if (!string.IsNullOrEmpty(nombre) && !string.IsNullOrEmpty(titulo) && !string.IsNullOrEmpty(tema) && !string.IsNullOrEmpty(clave))
             {
-
+                label1.Visible = true;
                 ResultadoDeBusqueda resultado = new ResultadoDeBusqueda();
                 resultado.listaResultados(nombre, titulo, tema, clave);
                 resultado.Show();
             }
+            else if (!string.IsNullOrEmpty(nombre) && !string.IsNullOrEmpty(titulo) && !string.IsNullOrEmpty(tema) && string.IsNullOrEmpty(clave))
+            {
+                label1.Visible = true;
+                ResultadoDeBusqueda resultado = new ResultadoDeBusqueda();
+                resultado.listaResultados(nombre, titulo, tema);
+                resultado.Show();
+            }
+            else if (!string.IsNullOrEmpty(nombre) && string.IsNullOrEmpty(titulo) && string.IsNullOrEmpty(tema) && string.IsNullOrEmpty(clave))
+            {
+                label1.Visible = true;
+                ResultadoDeBusqueda resultado = new ResultadoDeBusqueda();
+                resultado.listaResultadosAutor(nombre);
+                resultado.Show();
+            }
+            else if (string.IsNullOrEmpty(nombre) && !string.IsNullOrEmpty(titulo) && string.IsNullOrEmpty(tema) && string.IsNullOrEmpty(clave))
+            {
+                label1.Visible = true;
+                ResultadoDeBusqueda resultado = new ResultadoDeBusqueda();
+                resultado.listaResultadosTitulo(titulo);
+                resultado.Show();
+            }
+            else if (string.IsNullOrEmpty(nombre) && string.IsNullOrEmpty(titulo) && !string.IsNullOrEmpty(tema) && string.IsNullOrEmpty(clave))
+            {
+                label1.Visible = true;
+                ResultadoDeBusqueda resultado = new ResultadoDeBusqueda();
+                resultado.listaResultadosTitulo(tema);
+                resultado.Show();
+            }
+            else if (string.IsNullOrEmpty(nombre) && string.IsNullOrEmpty(titulo) && string.IsNullOrEmpty(tema) && !string.IsNullOrEmpty(clave))
+            {
+                label1.Visible = true;
+                ResultadoDeBusqueda resultado = new ResultadoDeBusqueda();
+                resultado.listaResultadosClave(clave);
+                resultado.Show();
+            }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
